@@ -6,41 +6,37 @@ using System.Threading.Tasks;
 
 namespace attackServer
 {
-    internal class Node
+    internal class Node<T>
     {
-        private int? _value;
-        private Node _next;
-        public Node() 
+        private T _value;
+        private Node<T> _next;
+        public Node() { }
+        public Node(T value)
         { 
-            this.SetValue(null);
-            this.SetNext(null);
-        }
-        public Node(int value)
-        { 
-            this._value = value;
+            this.SetValue(value);
             this.SetNext(null);
         }
 
-        public Node(int value, Node next) 
+        public Node(T value, Node<T> next) 
         {
-            this._value = value;
-            this._next = next = null;
+            this.SetValue(value);
+            this.SetNext(next);
         }
-        public void SetValue(int? value)
+        public void SetValue(T value)
         {
             this._value = value;
         }
 
-        public int? GetValue() 
+        public T GetValue() 
         {
             return this._value; 
         }
-        public void SetNext(Node next)
+        public void SetNext(Node<T> next)
         {
             this._next = next;
         }
 
-        public Node GetNext()
+        public Node<T> GetNext()
         {
             return this._next;
         }
@@ -49,8 +45,8 @@ namespace attackServer
         public override string ToString()
         {
             if (this._next != null)
-                return $"Node value is: {this._value}. Has {this._next}";
-            else return $"Node value is: {this._value}. Has no _next";
+                return $"Node value is: {this._value} Has {this._next}.";
+            else return $"Node value is: {this._value} Has no _next.";
         }
     }
 }

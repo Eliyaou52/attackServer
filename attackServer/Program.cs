@@ -31,11 +31,12 @@ namespace attackServer
             //Console.WriteLine($"Task B result: {taskB.Result}.");
             //Console.ReadLine();
 
-            Node node = new Node(); 
-            Node node1 = new Node(25);
-            node.SetValue(5);
-            node.SetNext(node1);
-            Console.WriteLine(node.ToString());
+            Queue<int> queue = new Queue<int>();
+            queue.Enqueue(4); 
+            queue.Enqueue(9);
+            queue.Enqueue(7);
+            Console.WriteLine(queue.getHead());
+            //Console.WriteLine(queue.getTail());
             Console.ReadLine();
         }
 
