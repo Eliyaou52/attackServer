@@ -22,13 +22,20 @@ namespace attackServer
             //Console.ReadLine();
 
             //3.
-            Task<string> taskA = GetDataFromServuceAAsync();
-            Task<string> taskB = GetDataFromServuceBAsync();
+            //Task<string> taskA = GetDataFromServuceAAsync();
+            //Task<string> taskB = GetDataFromServuceBAsync();
 
-            await Task.WhenAll(taskA, taskB);
+            //await Task.WhenAll(taskA, taskB);
 
-            Console.WriteLine($"Task A result: {taskA.Result}.");
-            Console.WriteLine($"Task B result: {taskB.Result}.");
+            //Console.WriteLine($"Task A result: {taskA.Result}.");
+            //Console.WriteLine($"Task B result: {taskB.Result}.");
+            //Console.ReadLine();
+
+            Node node = new Node(); 
+            Node node1 = new Node(25);
+            node.SetValue(5);
+            node.SetNext(node1);
+            Console.WriteLine(node.ToString());
             Console.ReadLine();
         }
 
